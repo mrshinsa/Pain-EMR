@@ -31,7 +31,8 @@ public class DummyContent {
         addItem(new DummyItem("4", "Injections"));
         addItem(new DummyItem("5", "SOAPP-R"));
         addItem(new DummyItem("6", "COMM"));
-        addItem(new DummyItem("7", "Preferences"));
+        addItem(new DummyItem("7", "FORMS"));
+        addItem(new DummyItem("10", "Preferences"));
     }
 
     private static void addItem(DummyItem item) {

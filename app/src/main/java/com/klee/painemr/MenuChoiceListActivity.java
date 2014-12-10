@@ -82,6 +82,9 @@ public class MenuChoiceListActivity extends Activity
                 Intent settingsIntent = new Intent(this, CommWizard.class);
                 startActivity(settingsIntent);
             } else if (id.equals("7")) {
+                Intent settingsIntent = new Intent(this, FormGeneratorExample.class);
+                startActivity(settingsIntent);
+            } else if (id.equals("10")) {
                 Intent settingsIntent = new Intent(this, SettingsActivity.class);
                 startActivity(settingsIntent);
             } else {

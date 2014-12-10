@@ -21,6 +21,9 @@
             android:label="@string/title_activity_login"
             android:windowSoftInputMode="adjustResize|stateHidden"></activity>
 
+        <activity android:name=".FormGeneratorExample"
+            android:label="@string/title_forms"></activity>
+
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />

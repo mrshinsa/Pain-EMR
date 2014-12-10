@@ -19,5 +19,6 @@
 
     <string name="soapp_activity_deleteme">SOAPP</string>
     <string name="title_activity_result">ResultActivity</string>
+    <string name="title_forms">Forms</string>
 
 </resources>
