@@ -23,6 +23,11 @@
 
         <activity android:name=".FormGeneratorExample"
             android:label="@string/title_forms"></activity>
+        <activity android:name=".formsengine.XmlGui"
+            android:label="@string/title_forms"></activity>
+        <activity android:name=".formsengine.RunForm"
+            android:label="RunForm"></activity>
+
 
         <meta-data
             android:name="com.google.android.gms.version"
@@ -38,7 +43,7 @@
             android:parentActivityName=".MenuChoiceListActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.klee.ithealth.MenuChoiceListActivity" />
+                android:value="com.klee.painemr.MenuChoiceListActivity" />
         </activity>
         <activity
             android:name=".SettingsActivity"

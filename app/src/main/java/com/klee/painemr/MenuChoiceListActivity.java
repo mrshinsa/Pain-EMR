@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.util.Log;
 
+import com.klee.painemr.formsengine.XmlGui;
+
 
 /**
  * An activity representing a list of Menu Choices. This activity
@@ -82,7 +84,7 @@ public class MenuChoiceListActivity extends Activity
                 Intent settingsIntent = new Intent(this, CommWizard.class);
                 startActivity(settingsIntent);
             } else if (id.equals("7")) {
-                Intent settingsIntent = new Intent(this, FormGeneratorExample.class);
+                Intent settingsIntent = new Intent(this, XmlGui.class);
                 startActivity(settingsIntent);
             } else if (id.equals("10")) {
                 Intent settingsIntent = new Intent(this, SettingsActivity.class);
