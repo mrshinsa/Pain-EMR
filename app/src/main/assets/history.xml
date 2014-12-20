@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<xmlgui title="Pain History" submitTo="http://servername/xmlgui1-post.php">
+
+    <form id="0" name="Pain EMR Registration" question="Family medical history"
+        submitTo="http://servername/xmlgui1-post.php">
+        <field name="general"
+            label="The following set of questsion will ask youa about your family's medical history."
+            type="choice" required="N"
+            options="Single |Married partnership/living with partner|Separated or divorced|Widowed " />
+    </form>
+
+    <form id="1" name="Pain EMR Registration" question="Is your biological mother alive?"
+        submitTo="http://servername/xmlgui1-post.php">
+        <field name="motherStatus" label="Status" type="choice" required="Y"
+            options="Yes|No|Don't know" />
+    </form>
+
+    <form id="2" name="Pain EMR Registration"
+        question="What medical conditions do you have? (check all that apply)"
+        submitTo="http://servername/xmlgui1-post.php">
+        <field name="newPain" label="Alcoholism" type="checkbox" required="N" options="" />
+        <field name="newPain" label="Amnesia" type="checkbox" required="N" options="" />
+        <field name="newPain" label="Anxiety" type="checkbox" required="N" options="" />
+        <field name="newPain" label="Asthma" type="checkbox" required="N" options="" />
+        <field name="newPain" label="Postpartum depression" type="checkbox" required="N"
+            options="" />
+        <field name="newPain" label="Birth defects" type="checkbox" required="N" options="" />
+        <field name="newPain" label="Bleeding disorder" type="checkbox" required="N" options="" />
+        <field name="newPain" label="Blood clots" type="checkbox" required="N" options="" />
+        <field name="newPain" label="Hepatitis B" type="checkbox" required="N" options="" />
+        <field name="newPain" label="Hepatitis C" type="checkbox" required="N" options="" />
+        <field name="newPain" label="High blood pressure" type="checkbox" required="N" options="" />
+        <field name="newPain" label="High cholestrol" type="checkbox" required="N" options="" />
+        <field name="newPain" label="HIV" type="checkbox" required="N" options="" />
+        <field name="newPain" label="Kidney/bladder disease" type="checkbox" required="N"
+            options="" />
+        <field name="newPain" label="Liver disease" type="checkbox" required="N" options="" />
+        <field name="newPain" label="Lung/resperatory diesease" type="checkbox" required="N"
+            options="" />
+        <field name="newPain" label="Mental illness" type="checkbox" required="N" options="" />
+    </form>
+
+    <form id="3" name="Pain EMR Registration"
+        question="Which of these do you have problems with? (check all that apply)"
+        submitTo="http://servername/xmlgui1-post.php">
+        <field name="newPain" label="Can't read this page" type="checkbox" required="N"
+            options="" />
+    </form>
+
+    <form id="4" name="Pain EMR Registration" question="Do you drink alcohol?"
+        submitTo="http://servername/xmlgui1-post.php">
+        <field name="painLevel" label="Answer:" type="choice" required="Y" options="Yes|No" />
+    </form>
+
+    <form id="5" name="Pain EMR Registration"
+        question="How many drinks containing alcohol do you have on a typical day when you are drinking?"
+        submitTo="http://servername/xmlgui1-post.php">
+        <field name="painLevel" label="Answer:" type="choice" required="Y"
+            options="1 or 2|3 or 4|5 or 6|7,8 or 9|10 or more" />
+    </form>
+
+    <form id="6" name="Pain EMR Registration" question="Do you smoke?"
+        submitTo="http://servername/xmlgui1-post.php">
+        <field name="painLevel" label="Answer:" type="choice" required="Y" options="Yes|No" />
+    </form>
+
+    <form id="7" name="Pain EMR Registration"
+        question="Which of these substances did you use in the past 30 days? (check all that apply)"
+        submitTo="http://servername/xmlgui1-post.php">
+        <field name="newPain" label="Cocaine or crack" type="checkbox" required="N" options="" />
+        <field name="newPain" label="Can't read the rest" type="checkbox" required="N" options="" />
+    </form>
+
+    <form id="8" name="Pain EMR Registration"
+        question="In the past 5 years, have oyu been charged with driving uder the influence (DUI)?"
+        submitTo="http://servername/xmlgui1-post.php">
+        <field name="painLevel" label="Answer:" type="choice" required="Y" options="Yes|No" />
+    </form>
+</xmlgui>
+

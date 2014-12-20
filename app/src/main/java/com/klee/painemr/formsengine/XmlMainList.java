@@ -82,17 +82,17 @@ public class XmlMainList extends ListActivity {
         Toast.makeText(this, selectedValue, Toast.LENGTH_SHORT).show();
 
         if (selectedValue.equals("About")) {
-            fileName = Environment.getExternalStorageDirectory() + "/" + PACKAGE_NAME + "/" + "about" + ".xml";
+            fileName = "about" + ".xml";
             newFormInfo = new Intent(this, RunForm.class);
             newFormInfo.putExtra("FILE_NAME", fileName);
             startActivity(newFormInfo);
         } else if (selectedValue.equals("History")) {
-            fileName = Environment.getExternalStorageDirectory() + "/" + PACKAGE_NAME + "/" + "history" + ".xml";
+            fileName =  "history" + ".xml";
             newFormInfo = new Intent(this, RunForm.class);
             newFormInfo.putExtra("FILE_NAME", fileName);
             startActivity(newFormInfo);
         } else if (selectedValue.equals("Pain")) {
-            fileName = Environment.getExternalStorageDirectory() + "/" + PACKAGE_NAME + "/" + "pain_0" + ".xml";
+            fileName = "pain" + ".xml";
             newFormInfo = new Intent(this, RunForm.class);
             newFormInfo.putExtra("FILE_NAME", fileName);
             startActivity(newFormInfo);

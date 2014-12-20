@@ -8,6 +8,7 @@ package com.klee.painemr.formsengine;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.content.Intent;
 import android.util.Log;
@@ -293,9 +294,9 @@ public class RunForm extends Activity {
     private boolean parseFormData(String fileName) {
         try {
             Log.d(tag, "ProcessForm");
-            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-            DocumentBuilder db = factory.newDocumentBuilder();
-            Document dom = db.parse(new File(fileName));
+            Document dom = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse( getAssets().open(fileName));
+
+
             Element root = dom.getDocumentElement();
             NodeList formsList = root.getElementsByTagName("form");
             if (formsList.getLength() < 1) {
@@ -305,11 +306,11 @@ public class RunForm extends Activity {
             }
             Node form = formsList.item(0);
 
-            for (int i = 0; i < formsList.getLength(); i++) {
-                Node formPageNode = formsList.item(i);
-                addFormPagetoLayout(formPageNode);
-
-            }
+//            for (int i = 0; i < formsList.getLength(); i++) {
+//                Node formPageNode = formsList.item(i);
+//                addFormPagetoLayout(formPageNode);
+//
+//            }
 
             theForm = new XmlGuiForm();
             // process form level
@@ -324,22 +325,22 @@ public class RunForm extends Activity {
 
 
             // now process the fields
-//            NodeList fieldsList = root.getElementsByTagName("field");
-//            for (int i = 0; i < fieldsList.getLength(); i++) {
-//                Node fieldNode = fieldsList.item(i);
-//                NamedNodeMap attr = fieldNode.getAttributes();
-//                XmlGuiFormField tempField = new XmlGuiFormField();
-//                tempField.setName(attr.getNamedItem("name").getNodeValue());
-//                tempField.setLabel(attr.getNamedItem("label").getNodeValue());
-//                tempField.setType(attr.getNamedItem("type").getNodeValue());
-//                if (attr.getNamedItem("required").getNodeValue().equals("Y"))
-//                    tempField.setRequired(true);
-//                else
-//                    tempField.setRequired(false);
-//                tempField.setOptions(attr.getNamedItem("options").getNodeValue());
-//
-//                theForm.getFields().add(tempField);
-//            }
+            NodeList fieldsList = root.getElementsByTagName("field");
+            for (int i = 0; i < fieldsList.getLength(); i++) {
+                Node fieldNode = fieldsList.item(i);
+                NamedNodeMap attr = fieldNode.getAttributes();
+                XmlGuiFormField tempField = new XmlGuiFormField();
+                tempField.setName(attr.getNamedItem("name").getNodeValue());
+                tempField.setLabel(attr.getNamedItem("label").getNodeValue());
+                tempField.setType(attr.getNamedItem("type").getNodeValue());
+                if (attr.getNamedItem("required").getNodeValue().equals("Y"))
+                    tempField.setRequired(true);
+                else
+                    tempField.setRequired(false);
+                tempField.setOptions(attr.getNamedItem("options").getNodeValue());
+
+                theForm.getFields().add(tempField);
+            }
 
 //            Log.i(tag, theForm.toString());
             return true;
