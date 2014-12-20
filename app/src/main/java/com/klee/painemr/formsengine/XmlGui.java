@@ -38,7 +38,6 @@ public class XmlGui extends Activity implements View.OnClickListener {
         this.findViewById(R.id.aboutButtonId).setOnClickListener(this);
         this.findViewById(R.id.historyButtonId).setOnClickListener(this);
         this.findViewById(R.id.painButtonId).setOnClickListener(this);
-
     }
 
     @Override
@@ -49,10 +48,8 @@ public class XmlGui extends Activity implements View.OnClickListener {
             Log.e("FormGeneratorExample", "Directory not created");
         }
 
-
         EditText formNumber = (EditText) findViewById(R.id.formNumberId);
-        Log.i(tag,"Attempting to process Form # [" + formNumber.getText().toString() + "]");
-
+        Log.i(tag, "Attempting to process Form # [" + formNumber.getText().toString() + "]");
 
         switch (v.getId()) {
             case R.id.btnRunForm1:
@@ -70,21 +67,21 @@ public class XmlGui extends Activity implements View.OnClickListener {
                 break;
 
             case R.id.aboutButtonId:
-                fileName = Environment.getExternalStorageDirectory() + "/" + PACKAGE_NAME + "/" + "about_" + formNumber.getText().toString() +".xml";
+                fileName = Environment.getExternalStorageDirectory() + "/" + PACKAGE_NAME + "/" + "about_" + formNumber.getText().toString() + ".xml";
                 newFormInfo = new Intent(XmlGui.this, RunForm.class);
                 newFormInfo.putExtra("FILE_NAME", fileName);
                 startActivity(newFormInfo);
                 break;
 
             case R.id.historyButtonId:
-                fileName = Environment.getExternalStorageDirectory() + "/" + PACKAGE_NAME + "/" + "history_" + formNumber.getText().toString() +".xml";
+                fileName = Environment.getExternalStorageDirectory() + "/" + PACKAGE_NAME + "/" + "history_" + formNumber.getText().toString() + ".xml";
                 newFormInfo = new Intent(XmlGui.this, RunForm.class);
                 newFormInfo.putExtra("FILE_NAME", fileName);
                 startActivity(newFormInfo);
                 break;
 
             case R.id.painButtonId:
-                fileName = Environment.getExternalStorageDirectory() + "/" + PACKAGE_NAME + "/" + "pain_" + formNumber.getText().toString() +".xml";
+                fileName = Environment.getExternalStorageDirectory() + "/" + PACKAGE_NAME + "/" + "pain_" + formNumber.getText().toString() + ".xml";
                 newFormInfo = new Intent(XmlGui.this, RunForm.class);
                 newFormInfo.putExtra("FILE_NAME", fileName);
                 startActivity(newFormInfo);
