@@ -3,7 +3,7 @@
 <xmlgui title="About Patient"  submitTo="http://servername/xmlgui1-post.php"     >
 
 	<form id="0" name="Pain EMR Registration" question="About your pain" submitTo="http://servername/xmlgui1-post.php" >
-		<field name="general" label="The following set of questsion will ask you for some general information about your pain.  
+		<field name="general" label="The following set of question will ask you for some general information about your pain.
 		Please keep your answers to the pain for which you are currently seeking treatment." type="choice" required="N" options="Single |Married partnership/living with partner|Separated or divorced|Widowed "/>
 	</form>
 	
@@ -31,7 +31,7 @@
 	</form>
 	
 	<form id="4" name="Pain EMR Registration" question="About your pain" submitTo="http://servername/xmlgui1-post.php" >
-		<field name="general" label="Where in your body is the pain for which you are being treated?." type="choice" required="N" options="Single |Married partnership/living with partner|Separated or divorced|Widowed "/>
+		<field name="general" label="Where in your body is the pain for which you are being treated?." type="choice" required="N" options="Torso|arm|leg"/>
 	</form>
 		
 	<form id="5" name="Pain EMR Registration" question="What do you think is causing this pain? (check all that apply)" submitTo="http://servername/xmlgui1-post.php" >
