@@ -5,7 +5,7 @@
     <form id="0" name="Pain EMR Registration" question="Family medical history"
         submitTo="http://servername/xmlgui1-post.php">
         <field name="general"
-            label="The following set of questsion will ask youa about your family's medical history."
+            label="The following set of question will ask you about your family's medical history."
             type="choice" required="N"
             options="Single |Married partnership/living with partner|Separated or divorced|Widowed " />
     </form>

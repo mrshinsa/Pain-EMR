@@ -30,6 +30,7 @@ import android.app.AlertDialog.*;
 import java.util.ListIterator;
 import java.lang.Thread;
 
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -118,21 +119,24 @@ public class RunForm extends Activity {
             for (i = 0; i < xmlGuiForm.fields.size(); i++) {
                 if (xmlGuiForm.fields.elementAt(i).getType().equals("text")) {
                     xmlGuiForm.fields.elementAt(i).obj = new XmlGuiEditBox(this, (xmlGuiForm.fields.elementAt(i).isRequired() ? "*" : "") + xmlGuiForm.fields.elementAt(i).getLabel(), "");
-                    linearLayout.addView((View) xmlGuiForm.fields.elementAt(i).obj);
                 }
-                if (xmlGuiForm.fields.elementAt(i).getType().equals("numeric")) {
+                else if (xmlGuiForm.fields.elementAt(i).getType().equals("numeric")) {
                     xmlGuiForm.fields.elementAt(i).obj = new XmlGuiEditBox(this, (xmlGuiForm.fields.elementAt(i).isRequired() ? "*" : "") + xmlGuiForm.fields.elementAt(i).getLabel(), "");
                     ((XmlGuiEditBox) xmlGuiForm.fields.elementAt(i).obj).makeNumeric();
-                    linearLayout.addView((View) xmlGuiForm.fields.elementAt(i).obj);
                 }
-                if (xmlGuiForm.fields.elementAt(i).getType().equals("choice")) {
+                else if (xmlGuiForm.fields.elementAt(i).getType().equals("choice")) {
                     xmlGuiForm.fields.elementAt(i).obj = new XmlGuiPickOne(this, (xmlGuiForm.fields.elementAt(i).isRequired() ? "*" : "") + xmlGuiForm.fields.elementAt(i).getLabel(), xmlGuiForm.fields.elementAt(i).getOptions());
-                    linearLayout.addView((View) xmlGuiForm.fields.elementAt(i).obj);
                 }
-                if (xmlGuiForm.fields.elementAt(i).getType().equals("checkbox")) {
+                else if (xmlGuiForm.fields.elementAt(i).getType().equals("checkbox")) {
                     xmlGuiForm.fields.elementAt(i).obj = new XmlGuiCheckBox(this, (xmlGuiForm.fields.elementAt(i).isRequired() ? "*" : "") + xmlGuiForm.fields.elementAt(i).getLabel(), xmlGuiForm.fields.elementAt(i).getOptions());
-                    linearLayout.addView((View) xmlGuiForm.fields.elementAt(i).obj);
                 }
+                LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+//                lp.setMargins(5, 5, 5, 5);
+//                lp.gravity = Gravity.FILL;
+
+                ((View)(xmlGuiForm.fields.elementAt(i).obj)).setLayoutParams(lp);
+//                ((View)(xmlGuiForm.fields.elementAt(i).obj)).setPadding(1, 1, 1, 1);
+                linearLayout.addView((View) xmlGuiForm.fields.elementAt(i).obj);
             }
 
             Button btn = new Button(this);
@@ -276,7 +280,7 @@ public class RunForm extends Activity {
 //                Log.d(tag, "required: " + attr.getNamedItem("required").getNodeValue());
 //                Log.d(tag, "options: " + attr.getNamedItem("options").getNodeValue());
                 tempField.setName(attr.getNamedItem("name").getNodeValue());
-                tempField.setLabel(attr.getNamedItem("label").getNodeValue());
+                tempField.setLabel(attr.getNamedItem("label").getNodeValue() + "\n");
                 tempField.setType(attr.getNamedItem("type").getNodeValue());
                 if (attr.getNamedItem("required").getNodeValue().equals("Y"))
                     tempField.setRequired(true);
