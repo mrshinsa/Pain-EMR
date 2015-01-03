@@ -14,7 +14,7 @@ android {
     buildTypes {
         release {
             debuggable false
-            minifyEnabled false
+//            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -26,5 +26,5 @@ dependencies {
     compile 'com.google.android.gms:play-services:5.+'
     compile 'com.android.support:appcompat-v7:20.0.0'
     compile 'com.android.support:support-v4:20.0.0'
-    compile 'de.greenrobot:eventbus:+'
+    compile 'de.greenrobot:eventbus:2.4.0'
 }

@@ -9,6 +9,7 @@ package com.klee.painemr.formsengine;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.res.AssetManager;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.content.Intent;
 import android.util.Log;
@@ -31,6 +32,7 @@ import java.lang.Thread;
 
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.LinearLayout;
 import android.widget.Button;
@@ -110,6 +112,7 @@ public class RunForm extends Activity {
         Log.d(tag, "DisplayForm() : ");
         try {
 
+            addFormsSectionQuestionToLayout(xmlGuiForm.getFormQuestion());
             // walk thru our form elements and dynamically create them, leveraging our mini library of tools.
             int i;
             for (i = 0; i < xmlGuiForm.fields.size(); i++) {
@@ -134,7 +137,6 @@ public class RunForm extends Activity {
 
             Button btn = new Button(this);
             btn.setLayoutParams(new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-
             linearLayout.addView(btn);
 
             btn.setText("Clear");
@@ -145,7 +147,7 @@ public class RunForm extends Activity {
                         Builder bd = new Builder(linearLayout.getContext());
                         AlertDialog ad = bd.create();
                         ad.setTitle("Error");
-                        ad.setMessage("Please enter all required (*) fields");
+                        ad.setMessage("NOT IMPLEMENTED YET");
                         ad.show();
                         return;
 
@@ -174,15 +176,13 @@ public class RunForm extends Activity {
                 }
             });
 
-            setTitle(xmlGuiForm.getFormName());
+//            setTitle(xmlGuiForm.getFormName());
             return true;
         } catch (Exception e) {
             Log.e(tag, "Error Displaying Form");
             return false;
         }
     }
-
-
 
     private boolean SubmitForm() {
         try {
@@ -262,7 +262,7 @@ public class RunForm extends Activity {
         // process form level
         NamedNodeMap map = formPage.getAttributes();
         map.getNamedItem("id").getNodeValue();
-        map.getNamedItem("question").getNodeValue();
+        xmlGuiForm.setFormQuestion(map.getNamedItem("question").getNodeValue());
         NodeList refNodes = formPage.getChildNodes();
 
         for (int x = 0; x < refNodes.getLength(); x++) {
@@ -275,7 +275,6 @@ public class RunForm extends Activity {
 //                Log.d(tag, "type: " + attr.getNamedItem("type").getNodeValue());
 //                Log.d(tag, "required: " + attr.getNamedItem("required").getNodeValue());
 //                Log.d(tag, "options: " + attr.getNamedItem("options").getNodeValue());
-
                 tempField.setName(attr.getNamedItem("name").getNodeValue());
                 tempField.setLabel(attr.getNamedItem("label").getNodeValue());
                 tempField.setType(attr.getNamedItem("type").getNodeValue());
@@ -295,21 +294,14 @@ public class RunForm extends Activity {
         try {
             Log.d(tag, "ProcessForm");
             Document dom = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(getAssets().open(fileName));
-
-
             Element root = dom.getDocumentElement();
-
             NodeList formsList = root.getElementsByTagName("form");
-
             Log.d(tag, "Number of Forms are : " + formsList.getLength());
-
-
             if (formsList.getLength() < 1) {
                 // nothing here??
                 Log.e(tag, "No form, let's bail");
                 return false;
             }
-
             Node form = formsList.item(0);
             XmlGuiForm theForm = new XmlGuiForm();
             // process form level
@@ -321,17 +313,17 @@ public class RunForm extends Activity {
                 theForm.setSubmitTo(root.getAttribute("submitTo"));
             else
                 theForm.setSubmitTo("loopback");
-
-
-            addFormsQuestionToLayout(theForm);
-
+//            addFormsQuestionToLayout(theForm);
+            setTitle(theForm.getFormName());
 
             for (int i = 0; i < formsList.getLength(); i++) {
                 Log.d(tag, "addFormPagetoLayout: " + i);
+                if (i != 0) {
+                    addDividerToLayout();
+                }
                 Node formPageNode = formsList.item(i);
                 addFormsSectionToLayout(parseFormSection(formPageNode));
             }
-
 
             // now process the fields
 //            NodeList fieldsList = root.getElementsByTagName("field");
@@ -361,6 +353,25 @@ public class RunForm extends Activity {
         }
     }
 
+    private void addFormsSectionQuestionToLayout(String formQuestion) {
+        TextView tv = new TextView(this);
+        tv.setText(formQuestion);
+        tv.setTextSize(16);
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
+                LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        layoutParams.setMargins(0, 16, 0, 16);
+        linearLayout.addView(tv, layoutParams);
+    }
+
+    private void addDividerToLayout() {
+        ImageView divider = new ImageView(this);
+        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, 5);
+        lp.setMargins(10, 30, 10, 30);
+        divider.setLayoutParams(lp);
+        divider.setBackgroundColor(Color.LTGRAY);
+        linearLayout.addView(divider);
+    }
+
     private void addFormsQuestionToLayout(XmlGuiForm xmlGuiForm) {
         TextView tv = new TextView(this);
         tv.setText(xmlGuiForm.getFormQuestion());
@@ -370,8 +381,6 @@ public class RunForm extends Activity {
         layoutParams.setMargins(0, 16, 0, 16);
         linearLayout.addView(tv, layoutParams);
     }
-
-
 
     private boolean GetFormData(String formNumber) {
         try {

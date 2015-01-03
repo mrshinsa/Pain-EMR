@@ -12,9 +12,7 @@ import java.net.URLEncoder;
 public class XmlGuiForm {
 	private String formNumber;
 	private String formName;
-
     private String formQuestion;
-
     private String submitTo;
 	public Vector<XmlGuiFormField> fields;
 	

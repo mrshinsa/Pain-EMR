@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <xmlgui title="About Patient"  submitTo="http://servername/xmlgui1-post.php"     >
-
 	<form id="0" name="Pain EMR Registration" question="About your pain" submitTo="http://servername/xmlgui1-post.php" >
 		<field name="general" label="The following set of question will ask you for some general information about your pain.
 		Please keep your answers to the pain for which you are currently seeking treatment." type="choice" required="N" options="Single |Married partnership/living with partner|Separated or divorced|Widowed "/>
