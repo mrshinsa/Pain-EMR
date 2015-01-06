@@ -26,6 +26,7 @@ import com.klee.painemr.MenuChoiceDetailFragment;
 import com.klee.painemr.R;
 import com.klee.painemr.SettingsActivity;
 import com.klee.painemr.SoappWizard;
+import com.parse.ParseObject;
 
 import java.io.File;
 
@@ -64,6 +65,10 @@ public class XmlMainList extends ListActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setListAdapter(new MobileArrayAdapter(this, CATEGORY_STRING_ARRAY));
+
+        ParseObject testObject = new ParseObject("TestObject");
+        testObject.put("foo", "bar");
+        testObject.saveInBackground();
     }
 
     @Override
