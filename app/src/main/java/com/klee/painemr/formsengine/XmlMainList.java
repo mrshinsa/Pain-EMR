@@ -32,7 +32,7 @@ import java.io.File;
 
 public class XmlMainList extends ListActivity {
 
-    static final String[] CATEGORY_STRING_ARRAY = new String[]{"About", "History", "Pain"};
+    static final String[] CATEGORY_STRING_ARRAY = new String[]{"Pain Evaluation", "Medical History", "Pain"};
 
     class MobileArrayAdapter extends ArrayAdapter<String> {
         private final Context context;
@@ -86,13 +86,13 @@ public class XmlMainList extends ListActivity {
         String selectedValue = (String) getListAdapter().getItem(position);
         Toast.makeText(this, selectedValue, Toast.LENGTH_SHORT).show();
 
-        if (selectedValue.equals("About")) {
-            fileName = "about" + ".xml";
+        if (selectedValue.equals("Pain Evaluation")) {
+            fileName = "pain_evaluation" + ".xml";
             newFormInfo = new Intent(this, RunForm.class);
             newFormInfo.putExtra("FILE_NAME", fileName);
             startActivity(newFormInfo);
-        } else if (selectedValue.equals("History")) {
-            fileName =  "history" + ".xml";
+        } else if (selectedValue.equals("Medical History")) {
+            fileName =  "medical_history" + ".xml";
             newFormInfo = new Intent(this, RunForm.class);
             newFormInfo.putExtra("FILE_NAME", fileName);
             startActivity(newFormInfo);
