@@ -65,7 +65,8 @@
         <field name="lname" label="Other" type="text" required="Y" options="" />
     </form>
 
-    <form id="5" name="Pain EMR Registration" question="What treatment have you had in the past for your pain? (check all that apply)">
+    <form id="5" name="Pain EMR Registration"
+        question="What treatment have you had in the past for your pain? (check all that apply)">
         <field name="newPain"
             label="Phyiscal treatment (such as physical therapy, massages, chiropractic treatment, excercise or a supportive brace)"
             type="checkbox" required="N" options="" />
@@ -79,18 +80,16 @@
         <field name="newPain" label="Surgery" type="checkbox" required="N" options="" />
         <field name="newPain" label="Complimentary CANT READ" type="checkbox" required="N"
             options="" />
-        <field name="newPain" label="Surgery" type="checkbox" required="N" options="" />
-
         <field name="lname" label="Other types of treatment" type="text" required="Y" options="" />
         <field name="newPain" label="I have not had treatment in the past to treat my pain"
             type="checkbox" required="N" options="" />
     </form>
 
-    <form id="6" name="Pain EMR Registration" question="How helpful was the physical treatment (Such as phyiscal therapy, massage, chriopractic treatment, excercise, or a supportive brace)?">
-        <field name="workRelated" label="Answer:" type="choice" required="Y" options="Not helpful at all|
-                                Somewhat helpful\
-                                Helpful|
-                                Very helpful" />
+    <form id="6" name="Pain EMR Registration" question="How helpful were your treatments?">
+        <field name="workRelated" label="Answer:" type="choice" required="Y" options="Helpful
+        |Somewhat helpful
+        |Not helpfu
+        |My pain is worse" />
     </form>
 
     <form id="7" name="Pain EMR Registration"
@@ -98,7 +97,8 @@
         <field name="workRelated" label="Answer:" type="choice" required="Y" options="Yes|No" />
     </form>
 
-    <form id="8" name="Pain EMR Registration" question="What do you most expect from your treatment? (check up to 3 answers)">
+    <form id="8" name="Pain EMR Registration"
+        question="What do you most expect from your treatment? (check up to 3 answers)">
         <field name="newPain" label="Complete relief from pain" type="checkbox" required="N"
             options="" />
         <field name="newPain" label="Less pain" type="checkbox" required="N" options="" />
@@ -126,7 +126,8 @@
         <field name="newPain" label="None" type="checkbox" required="N" options="" />
     </form>
 
-    <form id="10" name="Pain EMR Registration" question="Are you involved in any litigation or lawsuits because of your pain?">
+    <form id="10" name="Pain EMR Registration"
+        question="Are you involved in any litigation or lawsuits because of your pain?">
         <field name="lawsuit" label="Answer:" type="choice" required="Y" options="Yes|No" />
     </form>
 
@@ -134,7 +135,8 @@
         <field name="workRelated" label="Answer:" type="choice" required="Y" options="Yes|No" />
     </form>
 
-    <form id="12" name="Pain EMR Registration" question="How has your pain affected your ability to work?">
+    <form id="12" name="Pain EMR Registration"
+        question="How has your pain affected your ability to work?">
         <field name="abilityToWork" label="Answer:" type="choice" required="Y" options="My pain has not affected my ability to work|
 I'm unable to work but I'm not on worker's compensation or disability|
 I'm unable to work and receive workers compensation|
@@ -142,11 +144,13 @@ I'm unable to work and receive disability benefits|
 Does not apply to me" />
     </form>
 
-    <form id="13" name="Pain EMR Registration" question="What are you interested in pursuing during this visit?">
+    <form id="13" name="Pain EMR Registration"
+        question="What are you interested in pursuing during this visit?">
         <field name="newPain" label="Information" type="checkbox" required="N" options="" />
         <field name="newPain" label="New medications" type="checkbox" required="N" options="" />
         <field name="newPain" label="Injections" type="checkbox" required="N" options="" />
-        <field name="newPain" label="Consult for another service" type="checkbox" required="N" options="" />
+        <field name="newPain" label="Consult for another service" type="checkbox" required="N"
+            options="" />
     </form>
 
 </xmlgui>

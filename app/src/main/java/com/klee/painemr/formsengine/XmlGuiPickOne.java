@@ -25,7 +25,7 @@ public class XmlGuiPickOne extends LinearLayout {
         label.setText(labelText);
         spinner = new Spinner(context);
         String[] opts = options.split("\\|");
-        aa = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item, opts);
+        aa = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_dropdown_item, opts);
         spinner.setAdapter(aa);
         this.addView(label);
         this.addView(spinner);

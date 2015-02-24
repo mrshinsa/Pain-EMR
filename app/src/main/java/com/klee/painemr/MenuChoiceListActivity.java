@@ -3,9 +3,13 @@ package com.klee.painemr;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
+import android.os.Environment;
 import android.util.Log;
 
+import com.klee.painemr.formsengine.RunForm;
 import com.klee.painemr.formsengine.XmlGui;
+
+import java.io.File;
 
 
 /**
@@ -61,39 +65,47 @@ public class MenuChoiceListActivity extends Activity
      */
     @Override
     public void onItemSelected(String id) {
-        if (mTwoPane) {
-            // In two-pane mode, show the detail view in this activity by
-            // adding or replacing the detail fragment using a
-            // fragment transaction.
-            Bundle arguments = new Bundle();
-            arguments.putString(MenuChoiceDetailFragment.ARG_ITEM_ID, id);
-            MenuChoiceDetailFragment fragment = new MenuChoiceDetailFragment();
-            fragment.setArguments(arguments);
-            getFragmentManager().beginTransaction()
-                    .replace(R.id.menuchoice_detail_container, fragment)
-                    .commit();
 
-        } else {
-            // In single-pane mode, simply start the detail activity
-            // for the selected item ID.
-            Log.d("MenuChoiceListActivity", "onItemSelected(): " + id);
-            if (id.equals("5")) {
-                Intent settingsIntent = new Intent(this, SoappWizard.class);
-                startActivity(settingsIntent);
-            } else if (id.equals("6")) {
-                Intent settingsIntent = new Intent(this, CommWizard.class);
-                startActivity(settingsIntent);
-            } else if (id.equals("7")) {
-                Intent settingsIntent = new Intent(this, XmlGui.class);
-                startActivity(settingsIntent);
-            } else if (id.equals("10")) {
-                Intent settingsIntent = new Intent(this, SettingsActivity.class);
-                startActivity(settingsIntent);
-            } else {
-                Intent detailIntent = new Intent(this, MenuChoiceDetailActivity.class);
-                detailIntent.putExtra(MenuChoiceDetailFragment.ARG_ITEM_ID, id);
-                startActivity(detailIntent);
-            }
+        String fileName = "";
+        Intent newFormInfo;
+        String PACKAGE_NAME = getApplicationContext().getPackageName();
+        File ChildFolder = new File(Environment.getExternalStorageDirectory() + "/" + PACKAGE_NAME);
+        if (!ChildFolder.mkdirs()) {
+            Log.e("FormGeneratorExample", "Directory not created");
         }
+
+        // In single-pane mode, simply start the detail activity
+        // for the selected item ID.
+        Log.d("MenuChoiceListActivity", "onItemSelected(): " + id);
+        if (id.equals("5")) {
+            Intent settingsIntent = new Intent(this, SoappWizard.class);
+            startActivity(settingsIntent);
+        } else if (id.equals("6")) {
+            Intent settingsIntent = new Intent(this, CommWizard.class);
+            startActivity(settingsIntent);
+        } else if (id.equals("7")) {
+            Intent settingsIntent = new Intent(this, XmlGui.class);
+            startActivity(settingsIntent);
+
+
+        } else if (id.equals("8")) {
+            fileName = "pain_evaluation" + ".xml";
+            newFormInfo = new Intent(this, RunForm.class);
+            newFormInfo.putExtra("FILE_NAME", fileName);
+            startActivity(newFormInfo);
+        } else if (id.equals("9")) {
+            fileName = "medical_history" + ".xml";
+            newFormInfo = new Intent(this, RunForm.class);
+            newFormInfo.putExtra("FILE_NAME", fileName);
+            startActivity(newFormInfo);
+        } else if (id.equals("10")) {
+            Intent settingsIntent = new Intent(this, SettingsActivity.class);
+            startActivity(settingsIntent);
+        } else {
+            Intent detailIntent = new Intent(this, MenuChoiceDetailActivity.class);
+            detailIntent.putExtra(MenuChoiceDetailFragment.ARG_ITEM_ID, id);
+            startActivity(detailIntent);
+        }
+
     }
 }

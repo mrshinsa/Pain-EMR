@@ -32,7 +32,7 @@ import java.io.File;
 
 public class XmlMainList extends ListActivity {
 
-    static final String[] CATEGORY_STRING_ARRAY = new String[]{"Pain Evaluation", "Medical History", "Pain"};
+    static final String[] CATEGORY_STRING_ARRAY = new String[]{"Pain Evaluation", "Medical History"};
 
     class MobileArrayAdapter extends ArrayAdapter<String> {
         private final Context context;

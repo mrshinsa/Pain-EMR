@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xmlgui title="About Pain"  submitTo="http://servername/xmlgui1-post.php"     >
+<xmlgui title="About Pain">
 
     <form id="0" name="Pain EMR Registration" question="Impact on your life"
         submitTo="http://servername/xmlgui1-post.php">
@@ -9,155 +9,66 @@
             options="Single |Married partnership/living with partner|Separated or divorced|Widowed " />
     </form>
 
+
     <form id="1" name="Pain EMR Registration"
-        question="What do you most expect from your treatment? (check up to 3 answers)"
-        submitTo="http://servername/xmlgui1-post.php">
-        <field name="newPain" label="Work schedule" type="checkbox" required="N" options="" />
-        <field name="newPain" label="Daily chores" type="checkbox" required="N" options="" />
-        <field name="newPain" label="Your ability to CANT READ" type="checkbox" required="N"
+        question="What medical conditions do you have? (check all that apply)">
+        <field name="newPain" label="Alcoholism" type="checkbox" required="N" options="" />
+        <field name="newPain" label="Amnesia" type="checkbox" required="N" options="" />
+        <field name="newPain" label="Anxiety" type="checkbox" required="N" options="" />
+        <field name="newPain" label="Asthma" type="checkbox" required="N" options="" />
+        <field name="newPain" label="Postpartum depression" type="checkbox" required="N"
             options="" />
-        <field name="newPain" label="Sleeping" type="checkbox" required="N" options="" />
-        <field name="newPain" label="Sexual activity" type="checkbox" required="N" options="" />
-        <field name="newPain" label="Your appetite" type="checkbox" required="N" options="" />
-        <field name="newPain" label="Excercise" type="checkbox" required="N" options="" />
-        <field name="newPain" label="CANT READ" type="checkbox" required="N" options="" />
-        <field name="newPain" label="CANT READ2" type="checkbox" required="N" options="" />
-        <field name="newPain" label="Child care" type="checkbox" required="N" options="" />
-        <field name="newPain" label="Social life" type="checkbox" required="N" options="" />
-        <field name="newPain" label="Your hobbies" type="checkbox" required="N" options="" />
-        <field name="newPain" label="Your relationship" type="checkbox" required="N" options="" />
-        <field name="newPain" label="None of these" type="checkbox" required="N" options="" />
-    </form>
-
-    <form id="2" name="Pain EMR Registration"
-        question="How often does your pain get in the way of your ability to move?"
-        submitTo="http://servername/xmlgui1-post.php">
-        <field name="painLevel" label="Answer:" type="choice" required="Y"
-            options="Rarely|Sometimes|Often|Almost always" />
-    </form>
-
-
-    <form id="3" name="Pain EMR Registration" question="Which of these do you use to help you"
-        submitTo="http://servername/xmlgui1-post.php">
-        <field name="newPain" label="Crutches" type="checkbox" required="N" options="" />
-        <field name="newPain" label="Wheelchair" type="checkbox" required="N" options="" />
-        <field name="newPain" label="Walker" type="checkbox" required="N" options="" />
-        <field name="newPain" label="Cain" type="checkbox" required="N" options="" />
-        <field name="newPain" label="CANT READ" type="checkbox" required="N" options="" />
-        <field name="newPain" label="CANT READ" type="checkbox" required="N" options="" />
-        <field name="lname" label="Other" type="text" required="Y" options="" />
-        <field name="newPain" label="None" type="checkbox" required="N" options="" />
-    </form>
-
-    <form id="4" name="Pain EMR Registration"
-        question="What do you most expect from your treatment? (check up to 3 answers)"
-        submitTo="http://servername/xmlgui1-post.php">
-        <field name="newPain" label="Complete relief from pain" type="checkbox" required="N"
+        <field name="newPain" label="Birth defects" type="checkbox" required="N" options="" />
+        <field name="newPain" label="Bleeding disorder" type="checkbox" required="N" options="" />
+        <field name="newPain" label="Blood clots" type="checkbox" required="N" options="" />
+        <field name="newPain" label="Hepatitis B" type="checkbox" required="N" options="" />
+        <field name="newPain" label="Hepatitis C" type="checkbox" required="N" options="" />
+        <field name="newPain" label="High blood pressure" type="checkbox" required="N" options="" />
+        <field name="newPain" label="High cholestrol" type="checkbox" required="N" options="" />
+        <field name="newPain" label="HIV" type="checkbox" required="N" options="" />
+        <field name="newPain" label="Kidney/bladder disease" type="checkbox" required="N"
             options="" />
-        <field name="newPain" label="Less pain" type="checkbox" required="N" options="" />
-        <field name="newPain" label="To be able to go back to work" type="checkbox" required="N"
+        <field name="newPain" label="Liver disease" type="checkbox" required="N" options="" />
+        <field name="newPain" label="Lung/resperatory diesease" type="checkbox" required="N"
             options="" />
-        <field name="newPain" label="To be able to do the things I need to every day"
-            type="checkbox" required="N" options="" />
-        <field name="newPain" label="To be mor eactive" type="checkbox" required="N" options="" />
-        <field name="newPain" label="To get more pain medication" type="checkbox" required="N"
-            options="" />
-        <field name="newPain" label="To need less pain medications that I take now" type="checkbox"
-            required="N" options="" />
-        <field name="newPain" label="To sleep better" type="checkbox" required="N" options="" />
-        <field name="lname" label="Other" type="text" required="Y" options="" />
+        <field name="newPain" label="Mental illness" type="checkbox" required="N" options="" />
     </form>
 
-    <form id="5" name="Pain EMR Registration"
-        question="Are you involved in any litigation or lawsuits because of your pain?"
-        submitTo="http://servername/xmlgui1-post.php">
-        <field name="lawsuit" label="Answer:" type="choice" required="Y" options="Yes|No" />
+
+    <form id="2" name="Pain EMR Registration" question="Please list your past surgical procedures">
+        <field name="surgical" label="Answer:" type="text" required="Y" options="" />
     </form>
 
-    <form id="6" name="Pain EMR Registration" question="Is your pain related to a work injury?"
-        submitTo="http://servername/xmlgui1-post.php">
-        <field name="workRelated" label="Answer:" type="choice" required="Y" options="Yes|No" />
+
+    <form id="3" name="Pain EMR Registration" question="Do you have any allergies?">
+        <field name="alcohol" label="Answer:" type="choice" required="Y" options="Yes|No" />
+    </form>
+
+    <form id="4" name="Pain EMR Registration" question="What medications are you currently taking?">
+        <field name="medications" label="Answer:" type="text" required="Y" options="" />
+    </form>
+
+
+    <form id="5" name="Pain EMR Registration" question="Do you take any opioids for your pain?">
+        <field name="alcohol" label="Answer:" type="choice" required="Y" options="Yes|No" />
+    </form>
+
+
+    <form id="6" name="Pain EMR Registration" question="Do you drink alcohol?">
+        <field name="alcohol" label="Answer:" type="choice" required="Y"
+            options="No|1|2|3|4|greater than 5" />
     </form>
 
 
     <form id="7" name="Pain EMR Registration"
-        question="How has your pain affected your ability to work?"
-        submitTo="http://servername/xmlgui1-post.php">
-        <field name="abilityToWork" label="Answer:" type="choice" required="Y" options="My pain has not affected my ability to work|
-I'm unable to work but I'm not on worker's compensation or disability|
-I'm unable to work and receive workers compensation|
-I'm unable to work and receive disability benefits|
-Does not apply to me" />
+        question="Do you smoke? If yes, how many packs a day?">
+        <field name="smoke" label="Answer:" type="choice" required="Y"
+            options="No|1|2|3|4|greater than 5" />
     </form>
 
 
-    <form id="8" name="Pain EMR Registration" question="Medical history"
-        submitTo="http://servername/xmlgui1-post.php">
-        <field name="general"
-            label="The following set of questions will ask you about your medical history."
-            type="choice" required="N"
-            options="Single |Married partnership/living with partner|Separated or divorced|Widowed " />
-    </form>
-
-    <form id="9" name="Pain EMR Registration"
-        question="You said you were taking Methadone.  How helpful was this medication?"
-        submitTo="http://servername/xmlgui1-post.php">
-        <field name="workRelated" label="Answer:" type="choice" required="Y" options="Not helpful at all|
-Somewhat helpful\
-Helpful|
-Very helpful" />
-    </form>
-
-
-    <form id="10" name="Pain EMR Registration"
-        question="You said you were taking Methadone.  HDid you have serious side effect from this medication?"
-        submitTo="http://servername/xmlgui1-post.php">
-        <field name="workRelated" label="Answer:" type="choice" required="Y" options="Yes|No" />
-    </form>
-
-
-    <form id="11" name="Pain EMR Registration"
-        question="What treatment have you had in the past for your pain? (check all that apply)"
-        submitTo="http://servername/xmlgui1-post.php">
-        <field name="newPain"
-            label="Phyiscal treatment (such as physical therapy, massages, chiropractic treatment, excercise or a supportive brace)"
-            type="checkbox" required="N" options="" />
-        <field name="newPain"
-            label="Mental health treatment (such as counseling, individual or group therapy, or psychiatric evaluation)"
-            type="checkbox" required="N" options="" />
-        <field name="newPain"
-            label="Interventional treatment (such as shots or injectsion, trigger points etc.)"
-            type="checkbox" required="N" options="" />
-        <field name="newPain" label="Hospitalization" type="checkbox" required="N" options="" />
-        <field name="newPain" label="Surgery" type="checkbox" required="N" options="" />
-        <field name="newPain" label="Complimentary CANT READ" type="checkbox" required="N"
-            options="" />
-        <field name="newPain" label="Surgery" type="checkbox" required="N" options="" />
-
-        <field name="lname" label="Other types of treatment" type="text" required="Y" options="" />
-        <field name="newPain" label="I have not had treatment in the past to treat my pain"
-            type="checkbox" required="N" options="" />
-    </form>
-
-    <form id="12" name="Pain EMR Registration"
-        question="How helpful was the physical treatment (Such as phyiscal therapy, massage, chriopractic treatment, excercise, or a supportive brace)?"
-        submitTo="http://servername/xmlgui1-post.php">
-        <field name="workRelated" label="Answer:" type="choice" required="Y" options="Not helpful at all|
-                                Somewhat helpful\
-                                Helpful|
-                                Very helpful" />
-    </form>
-
-    <form id="13" name="Pain EMR Registration"
-        question="Have you taken any other steps on your own (without the advice of a healthcare provider) in the past to treat this pain"
-        submitTo="http://servername/xmlgui1-post.php">
-        <field name="workRelated" label="Answer:" type="choice" required="Y" options="Yes|No" />
-    </form>
-
-    <form id="14" name="Pain EMR Registration"
-        question="Have you ever used a prescription medication for something that it wasn't prescribed for (such as using a medication that was prescribed for someone else, using a medication that was prescribed to you for reasons other than what it was prescribed for, or using a prescription medication to feel more relaxed, etc)"
-        submitTo="http://servername/xmlgui1-post.php">
-        <field name="workRelated" label="Answer:" type="choice" required="Y" options="Yes|No" />
+    <form id="8" name="Pain EMR Registration" question="Have you ever used an illicit drugs?">
+        <field name="smoke" label="Answer:" type="choice" required="Y" options="Yes|No" />
     </form>
 
 
