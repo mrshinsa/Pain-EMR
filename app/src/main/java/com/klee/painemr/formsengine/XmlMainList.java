@@ -12,21 +12,14 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.view.View;
 
-import com.klee.painemr.CommWizard;
-import com.klee.painemr.MenuChoiceDetailActivity;
-import com.klee.painemr.MenuChoiceDetailFragment;
 import com.klee.painemr.R;
-import com.klee.painemr.SettingsActivity;
-import com.klee.painemr.SoappWizard;
-import com.parse.ParseObject;
 
 import java.io.File;
 
@@ -66,9 +59,6 @@ public class XmlMainList extends ListActivity {
         super.onCreate(savedInstanceState);
         setListAdapter(new MobileArrayAdapter(this, CATEGORY_STRING_ARRAY));
 
-        ParseObject testObject = new ParseObject("TestObject");
-        testObject.put("foo", "bar");
-        testObject.saveInBackground();
     }
 
     @Override
